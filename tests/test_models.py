@@ -203,8 +203,8 @@ class TestProductModel(unittest.TestCase):
         for product in found_products:
             self.assertEqual(product.category, category)
 
-    def test_deserialize_a_product_with_(self):
-        """It should not deserialize a product if any of the fields does not meet the specs"""
+    def test_deserialize_a_product_with_bad_fields_or_data(self):
+        """It should not deserialize a product if any of the fields or data does not meet the specs"""
         product = ProductFactory()
         fake_product_dict = {
             "id": product.id,
